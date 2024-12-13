@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 :root {
-	--background: #ffffff;
-	--foreground: #171717;
+	--background: #ededed;
+	--foreground: #16161d;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--background: #0a0a0a;
+		--background: #16161d;
 		--foreground: #ededed;
 	}
 }
@@ -26,6 +26,13 @@ code pre {
 	background-color: #efefef;
 	padding: .5rem;
 	border-radius: 0.125rem;
+}
+
+@media (prefers-color-scheme: dark) {
+	code pre {
+	background-color: #16161d;
+	color: #efefef;
+	}
 }
 
 h1,
