@@ -30,8 +30,8 @@ code pre {
 
 @media (prefers-color-scheme: dark) {
 	code pre {
-	background-color: #16161d;
-	color: #efefef;
+		background-color: #424257;
+		color: #BDBDBD;
 	}
 }
 
