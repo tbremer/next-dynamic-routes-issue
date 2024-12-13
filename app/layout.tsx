@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ServerLayoutComponent } from "@/app/components/test-bed/server";
+import { thenable } from "@/app/components/test-bed/thenable";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +29,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <h1>I am running {process.env.NODE_ENV}</h1>
+        <ServerLayoutComponent
+          thenables={[
+            Promise.resolve("hello, world"),
+            () => Promise.resolve("function called"),
+            thenable("this uses headers"),
+          ]}
+        >
+          {children}
+        </ServerLayoutComponent>
       </body>
     </html>
   );
