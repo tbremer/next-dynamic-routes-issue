@@ -1,16 +1,13 @@
-import Image from "next/image";
-import Link from "next/link";
+import { Link } from "./components/link";
 
 export default function Home() {
   return (
     <>
-      <Link href="/dynamic-route">
-        this is where you wanna go <Unicode v="279E" />
+      <Link href="/dynamic-route">dynamic route w/ promise function calls</Link>
+      <br />
+      <Link href="/dynamic-route-no-async-layout">
+        dynamic route w/o promise function calls
       </Link>
     </>
   );
-}
-
-function Unicode({ v }: { v: `U+${string}` | string }) {
-  return String.fromCodePoint(Number.parseInt(v.replace("U+", ""), 16));
 }
