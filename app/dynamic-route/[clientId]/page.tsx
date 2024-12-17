@@ -2,7 +2,9 @@ import type { JSX, ReactNode } from "react";
 
 export const dynamicParams = false;
 
-export function generateStaticParams(): { clientId: string }[] {
+type ClientIdentifiers = "clientA" | "clientB" | "clientC";
+
+export function generateStaticParams(): { clientId: ClientIdentifiers }[] {
   return [
     { clientId: "clientA" },
     { clientId: "clientB" },
@@ -12,7 +14,7 @@ export function generateStaticParams(): { clientId: string }[] {
 
 export default async function ClientIDPage({
   params,
-}: { params: Promise<{ clientId: string }> }): Promise<JSX.Element> {
+}: { params: Promise<{ clientId: ClientIdentifiers }> }): Promise<JSX.Element> {
   const { clientId } = await params;
   const { Logo, Title } = LOGOS.get(clientId);
 
@@ -34,7 +36,7 @@ export default async function ClientIDPage({
   );
 }
 
-const LOGOS = new Map(
+const LOGOS = new Map<ClientIdentifiers, { title: string; Logo: ReactNode }>(
   Object.entries({
     clientA: {
       title: "Client A",
@@ -108,5 +110,5 @@ const LOGOS = new Map(
         </svg>
       ),
     },
-  }),
+  }) as [ClientIdentifiers, { title: string; Logo: ReactNode }][],
 );
