@@ -30,14 +30,6 @@ export default function Layout({ children }: PropsWithChildren): JSX.Element {
             <Link href="/dynamic-route/clientB">route: `/clientB`</Link> (
             <em>should be `clientId` page</em>)
           </li>
-          <li>
-            <Link href="/dynamic-route/ohno">route: `/ohno`</Link> (
-            <em>
-              should be `clientId` page —{" "}
-              <strong>this should cause an application error</strong>
-            </em>
-            )
-          </li>
         </ul>
       </nav>
       <ServerLayoutComponent
