@@ -1,4 +1,4 @@
-Repository is an example of how next.js (v15.1.1-canary.2) dynamic routes on a single parent route can act differently from development and production.
+Repository is an example of how next.js (v15.2.0-canary.1) dynamic routes on a single parent route can act differently from development and production.
 
 When you call a `Thenable` (Promise or promise-like) function with a catch-all and dynamic-route on the same level the dynamic-route takes precedence in production mode, but not in development
 
